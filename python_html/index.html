@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Python</title>
+    
+   <style>
+        #container{
+            width:25%;
+            background-color:black;
+            color:white;
+            margin:auto;
+            text-align:center;
+            padding:2rem;
+            border-radius:15px;
+        }
+
+        #outer{
+            margin:14rem 0rem 0rem 0rem;
+        }
+   </style>
+</head>
+<body>
+
+    <div id="outer">
+    <div id="container">
+        <py-script>
+        
+           # print("hello")
+
+fahrenheit = float(input("Enter temp in fahrenheit: "))
+            # print(fahrenheit)
+
+celsius = (fahrenheit-32)/1.8
+print(str(fahrenheit) + (" degree in fahrenheit is equal to ") + str(celsius)+ (" degree in celcius"))
+        </py-script>
+    </div>
+    </div>
+
+</body>
+</html>
