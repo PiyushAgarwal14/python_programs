@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Score Prediction</title>
+    <style>
+        .Container{
+               margin-left: auto;
+               margin-right: auto;
+               text-align:justify;
+        }
+
+        .ai{
+            margin-bottom: 10px;
+        }
+        .card{
+            background-color: orchid;
+            width: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            /* margin-left: 5px; */
+            float:left;
+        }
+        .card2{
+            background-color: violet;
+            margin-left: 22rem;
+            width: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .button{
+            background-color: blueviolet;
+            color: white;
+            padding: 5px 15px 15px 5px;
+            font-weight: 700;
+            border-color:blueviolet;
+
+        }
+        
+        input {
+            border-radius: 5px;
+            width: 75%;
+            height: 25px;
+            border-color: orchid;
+            padding: 0px 0px 0px 5px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        abbr[title]{
+            text-decoration: none;
+        }
+        
+
+        @media only screen and (max-width: 600px) {
+            .card2{
+                width: 80%;
+                margin-left: 0rem;  
+                margin-top: auto;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+     </style>
+</head>
+<body>
+
+    <div class="Container">
+    <div class="card">    
+    <form action="classify" method="get">
+        <h1>Credit Score Predictor</h1>
+        <p class="ai">
+        <label for="Annual_Income"> Annual Income</label> <br>
+        <input type="number" id="ai" name="Annual_Income" placeholder="19114.12" required> </p>
+        
+        <p class="ai">
+        <label for="Monthly_Inhand_Salary"> Monthly Inhand Salary</label> <br>
+        <input type="number" id="mis" name="Monthly_Inhand_Salary" placeholder="1824" required> </p>
+
+        <p class="ai">
+        <label for="Number_of_Bank_Accounts"> Number of Bank Accounts </label> <br>
+        <input type="number" name="Number_of_Bank_Accounts" id="nba" placeholder="2" required> </p>
+
+        <p class="ai">
+        <label for="Number_of_Credit_cards">Number of Credit cards</label> <br>
+        <input type="number" name="Number_of_Credit_cards" id="ncc" placeholder="2" required> </p>
+
+        <p class="ai">
+        <label for="Interest_rate">Interest rate</label> <br>
+        <input type="number" name="Interest_rate" id="ir" placeholder="9" required> </p>
+
+        <p class="ai">
+        <label for="Number_of_Loans">Number of Loans</label> <br>
+        <input type="number" name="Number_of_Loans" id="nl" placeholder="2" required> </p>
+
+        <p class="ai">
+        <label for="Average">Average number of days delayed by the person</label> <br>
+        <input type="number" name="Average" id="a" placeholder="12" required> </p>
+
+        <p class="ai">
+        <label for="ndp">Number of delayed payments</label> <br>
+        <input type="ndp" name="ndp" id="ndp" placeholder="3" required> </p>
+
+        <p class="ai">
+        <label for="cm">
+            <abbr title="Bad: 0, Standard: 1, Good: 3"> 
+               <mark> Credit Mix </mark>
+            </abbr>
+        </label> <br>
+        <input type="number" name="cm" id="cm" placeholder="3" required> </p>
+
+        <p class="ai">
+        <label for="od">Outstanding Debt</label> <br>
+        <input type="number" name="od" id="od" placeholder="250" required> </p>
+
+        <p class="ai">
+        <label for="cha">Credit History Age</label> <br>
+        <input type="number" name="cha" id="cha" placeholder="200" required> </p>
+
+        <p class="ai">
+        <label for="ma">Monthly Balance</label> <br>
+        <input type="number" name="mb" id="ma" placeholder="310" required> </p>
+
+        <input type="submit" name="submit" id="submit" class="button">
+    </form>
+    </div>
+
+        <div class="card2">
+            <h3>Result</h3>
+        </div>
+</div>
+</body>
+</html>
