@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Score Prediction</title>
+
+    <style>
+        .Container{
+               margin-left: auto;
+               margin-right: auto;
+               text-align:justify;
+        }
+
+        .ai{
+            margin-bottom: 10px;
+        }
+        .card{
+            /* background-color: orchid; */
+            width: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            /* margin-left: 5px; */
+            float:left;
+            border-radius: 8px;
+        }
+        .card2{
+            /* background-color: violet; */
+            margin-left: 23rem;
+            width: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            align-items: center;
+            height: 30vh;
+        }
+
+        .button{
+            background-color: blueviolet;
+            color: white;
+            padding: 5px 15px 15px 5px;
+            font-weight: 700;
+            /* border-color:blueviolet; */
+
+        }
+        
+        input {
+            border-radius: 5px;
+            width: 75%;
+            height: 25px;
+            /* border-color: orchid; */
+            padding: 0px 0px 0px 5px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        abbr[title]{
+            text-decoration: none;
+        }
+        
+        .card_c {
+            float: right;
+            width: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-radius: 8px;
+            text-align:justify;
+        }
+        
+        .g{
+            color: green;
+            font-size: 20px;
+        }
+
+        .s{
+            color: blue;
+            font-size: 20px;
+        }
+
+        .p{
+            color: red;
+            font-size: 20px;
+        }
+
+        /* shape */
+        .circle {
+            height: 10px;
+            width: 10px;
+            background-color: green;
+            border-radius: 50%;
+        }
+
+
+        /* modal */
+            .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 200px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-left: 45px;
+            }
+
+            /* Modal Content */
+            .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            border-radius: 15px;
+            }
+
+            /* The Close Button */
+            .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            }
+
+        @media only screen and (max-width: 600px) {
+            .card2{
+                width: 80%;
+                margin-left: 5px;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+     </style>
+</head>
+<body>
+
+    <div class="Container">
+    <div class="card">    
+    <form action="classify" method="get">
+        <h1>Credit Score Predictor</h1>
+        <p class="ai">
+        <label for="Annual_Income"> Annual Income</label> <br>
+        <input type="number" id="ai" name="Annual_Income" placeholder="19114.12" required> </p>
+        
+        <p class="ai">
+        <label for="Monthly_Inhand_Salary"> Monthly Inhand Salary</label> <br>
+        <input type="number" id="mis" name="Monthly_Inhand_Salary" placeholder="1824" required> </p>
+
+        <p class="ai">
+        <label for="Number_of_Bank_Accounts"> Number of Bank Accounts </label> <br>
+        <input type="number" name="Number_of_Bank_Accounts" id="nba" placeholder="2" required> </p>
+
+        <p class="ai">
+        <label for="Number_of_Credit_cards">Number of Credit cards</label> <br>
+        <input type="number" name="Number_of_Credit_cards" id="ncc" placeholder="2" required> </p>
+
+        <p class="ai">
+        <label for="Interest_rate">Interest rate</label> <br>
+        <input type="number" name="Interest_rate" id="ir" placeholder="9" required> </p>
+
+        <p class="ai">
+        <label for="Number_of_Loans">Number of Loans</label> <br>
+        <input type="number" name="Number_of_Loans" id="nl" placeholder="2" required> </p>
+
+        <p class="ai">
+        <label for="Average">Average number of days delayed <br> by the person</label> <br>
+        <input type="number" name="Average" id="a" placeholder="12" required> </p>
+
+        <p class="ai">
+        <label for="ndp">Number of delayed payments</label> <br>
+        <input type="ndp" name="ndp" id="ndp" placeholder="3" required> </p>
+
+        <p class="ai">
+        <label for="cm">
+            <abbr title="Bad: 0, Standard: 1, Good: 3"> 
+               <mark> Credit Mix </mark>
+            </abbr>
+        </label> <br>
+        <input type="number" name="cm" id="cm" placeholder="3" required> </p>
+
+        <p class="ai">
+        <label for="od">Outstanding Debt</label> <br>
+        <input type="number" name="od" id="od" placeholder="250" required> </p>
+
+        <p class="ai">
+        <label for="cha">Credit History Age</label> <br>
+        <input type="number" name="cha" id="cha" placeholder="200" required> </p>
+
+        <p class="ai">
+        <label for="ma">Monthly Balance</label> <br>
+        <input type="number" name="mb" id="ma" placeholder="310" required> </p>
+
+        <input type="submit" name="submit" id="submit" class="button">
+    </form>
+    </div>
+    
+
+        <div class="card2">
+            <img src="images/print.png" alt="print" onclick="window.print()" style="float: right;">
+            <h3>Result</h3>
+           
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn" style="float: left;">Tip</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Opening new Credit Accounts can sometimes lower your score
+                    <img src="images/tip.png" alt="tip" width="100px">
+                </p>
+            </div>
+            </div>
+            
+            <div class="card_c">
+                <ul>
+                    <li class="g">Good</li>
+                    <li class="s">Standard</li>
+                    <li class="p">Poor</li>
+                </ul>
+            </div>
+        </div>
+</div>
+</body>
+</html>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
