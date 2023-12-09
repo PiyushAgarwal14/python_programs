@@ -219,7 +219,6 @@
 # else:
 #   print('not palindrome')
 
-
 # arr = '1234567'
 # print(len(arr))
 
@@ -231,3 +230,208 @@
 # print(word.find('is'))
 # print(word.replace('my' , 'Piyush'))
 # (*** strings are immutable ***)
+
+# (****** 09/12/2023) ******)
+
+# booleans
+
+# name = 'piyush'
+# is_cool = False
+# is_cool = True
+# print(bool('true'))
+
+# birth_year = int(input('In which year you were born \n'))
+# age = 2023 - birth_year
+# print(f'Your age is {age}')
+
+# user_name = str(input('Enter your username \n'))
+# password = str(input('Enter your password \n'))
+
+# password_length = len(password)
+# hidden_password = '*' * password_length
+
+# print(f'Your password {hidden_password} is {password_length} letters long')
+
+# list
+# list slicing
+amazon_cart = ['notebooks', 'sunglasses', 'toys', 'grapes']
+# print(amazon_cart)
+# print(amazon_cart[0::2])
+
+# amazon_cart[0] = 'laptop'
+# print(amazon_cart)
+
+#  *** list is mutable ***
+
+# new_cart = amazon_cart[:]
+# new_cart[0] = 'tshirt'
+# print(new_cart)
+# print(amazon_cart)
+
+# **** Matrix ****
+
+# list = [
+#   [1,2,5],
+#   [2,4,6],
+#   [7,8,9]
+# ]
+
+# print(list[0] [2])
+
+# append
+
+# basket = [1, 2, 3, 4, 5]
+# print(len(basket))
+# print(basket)
+
+# new_basket = basket.append(100)
+# print(new_basket)
+
+# basket.append(100)
+# new_basket = basket
+# print(basket)
+# print(new_basket)
+
+# basket.insert(4,100)
+# new_basket = basket
+# print(basket)
+# print(new_basket)
+
+# basket.extend([100])
+# print(basket)
+
+# // pop
+
+# basket.pop()
+# basket.pop()
+# basket.pop(0)
+
+# // remove
+# basket.remove(3)
+# print(basket)
+
+# new_basket = basket.pop(4)
+# print(new_basket)
+
+# basket.clear()
+# print(basket)
+
+# bucket = ['a', 'b', 'c', 'd', 'e', 'c']
+# print(bucket.index('e'))
+# print(bucket.index('b',0,2))
+
+# print('d' in bucket)
+# print('h' in bucket)
+
+# print('i' in 'My name is Piyush')
+
+# print(bucket.count('c'))
+
+# bucket = ['a', 'b', 'c', 'e', 'd', 'e', 'c']
+# bucket.sort()
+# print(bucket)
+# print(sorted(bucket))  #create new array -  method 1
+# print(bucket)
+
+# new_bucket = bucket[:] # method
+# new_bucket.sort()      # 2
+# print(new_bucket)
+# print(bucket)
+
+# new_bucket = bucket.copy() # method 3
+# new_bucket.sort()
+# print(new_bucket)
+# print(bucket)
+
+# *** sort aand reverse  ***
+# bucket = ['a', 'b', 'c', 'e', 'd', 'e', 'c']
+# bucket.sort()
+# bucket.reverse()
+# # print(bucket)
+# print(bucket[::-1])
+# print(bucket)
+
+# //range
+
+# print(list(range(101)))
+
+# sentence = ' '
+# new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'piyush'])
+# print(new_sentence)
+
+# word2 = ' '.join(['hello', 'hi', 'by', 'by'])
+# print(word2)
+
+# ( *** list unpacking ***)
+
+# a, b, c, *others, p = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# print(a)
+# print(b)
+# print(c)
+# print(others)
+# print(p)
+
+# weapons = None
+# print(weapons)
+
+# Dictionary
+
+# dictionary = {
+#   'a' : ['1', '2', '3'],
+#   'b' : 'hello',
+#   'c' : True
+# }
+
+# print(dictionary['a'])
+# print(dictionary)
+
+# my_list = [
+#   {
+#     'a' : [4,5,6],
+#     'b' : 'hello',
+#     'x' : False
+#   },
+
+#   {
+#     'a' : [7,8,9],
+#     'b' : 'hello',
+#     'v' : True
+#   }
+# ]
+# print(my_list[0] ['a'] [2])
+# print(my_list[1] ['b'])
+
+# library = {
+#   'basket' : [1,2,3],
+#   'greet' : 'hello',
+#   'age': 22
+# }
+# print(library.get('age', 25))
+
+# user2 = dict(name='piyush')
+# print(user2)
+
+task = {'a': [1, 2, 3], 'b': 'hii', 'u': 26}
+
+# print( 'a' in task)
+# print('a' in task.keys())
+# print(26 in task.values())
+
+# print(task.items())
+# task.clear()
+# print(task)
+
+# task2 = task.copy()
+# print(task.clear())
+# print(task2)
+
+# print(task.pop('u'))
+# print(task)
+
+# print(task.popitem())
+
+# print(task.update({'u' : '22'}))
+# print(task)
+
+# print(task.update({'age' : 20}))
+# print(task)
