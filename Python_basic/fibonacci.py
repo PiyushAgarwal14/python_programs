@@ -1,0 +1,20 @@
+def fibonacci():
+    n = int(input('Enter a number for fibonacci: \n'))
+    a = 0
+    b = 1
+    if n < 0:
+      print('Incorrect input')
+      
+    elif n == 0:
+      return a
+      
+    elif n == 1:
+      return b
+      
+    else:
+      for i in range(2,n):
+        c = a + b
+        a = b
+        b = c
+      print(f'\nfibonacci of {n} is {b}')
+fibonacci()
