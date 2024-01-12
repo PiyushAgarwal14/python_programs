@@ -20,3 +20,7 @@
 # for j in list:
 #     if(j % 2 == 0):
 #         print(j, end="")
+
+
+
+# even, plaindrone, dictionaries, array sort, string vowels - consonants, character repeat,
